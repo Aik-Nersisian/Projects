@@ -1,0 +1,177 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+:root {
+    --ion-color-greenish: #10FDB9;
+    --ion-color-greenish-rgb: 16,253,185;
+    --ion-color-greenish-contrast: #000000;
+    --ion-color-greenish-contrast-rgb: 0,0,0;
+    --ion-color-greenish-shade: #0edfa3;
+    --ion-color-greenish-tint: #28fdc0;
+    --ion-color-whitish: #f3f3f3;
+    --ion-color-whitish-rgb: 243,243,243;
+    --ion-color-whitish-contrast: #000000;
+    --ion-color-whitish-contrast-rgb: 0,0,0;
+    --ion-color-whitish-shade: #d6d6d6;
+    --ion-color-whitish-tint: #f4f4f4;
+    --ion-color-darkish: #1E1E1E;
+    --ion-color-darkish-rgb: 30,30,30;
+    --ion-color-darkish-contrast: #ffffff;
+    --ion-color-darkish-contrast-rgb: 255,255,255;
+    --ion-color-darkish-shade: #1a1a1a;
+    --ion-color-darkish-tint: #353535;
+
+    --ion-color-yellowish: #feca57;
+    --ion-color-yellowish-rgb: 254,202,87;
+    --ion-color-yellowish-contrast: #000000;
+    --ion-color-yellowish-contrast-rgb: 0,0,0;
+    --ion-color-yellowish-shade: #e0b24d;
+    --ion-color-yellowish-tint: #fecf68;
+
+    --ion-color-redish: #f53b57;
+    --ion-color-redish-rgb: 245,59,87;
+    --ion-color-redish-contrast: #ffffff;
+    --ion-color-redish-contrast-rgb: 255,255,255;
+    --ion-color-redish-shade: #d8344d;
+    --ion-color-redish-tint: #f64f68;
+  }
+
+  .ion-color-redish {
+    --ion-color-base: var(--ion-color-redish);
+    --ion-color-base-rgb: var(--ion-color-redish-rgb);
+    --ion-color-contrast: var(--ion-color-redish-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-redish-contrast-rgb);
+    --ion-color-shade: var(--ion-color-redish-shade);
+    --ion-color-tint: var(--ion-color-redish-tint);
+  }
+  
+  .ion-color-darkish {
+    --ion-color-base: var(--ion-color-darkish);
+    --ion-color-base-rgb: var(--ion-color-darkish-rgb);
+    --ion-color-contrast: var(--ion-color-darkish-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-darkish-contrast-rgb);
+    --ion-color-shade: var(--ion-color-darkish-shade);
+    --ion-color-tint: var(--ion-color-darkish-tint);
+  
+
+  }
+
+
+  .ion-color-greenish {
+    --ion-color-base: var(--ion-color-greenish);
+    --ion-color-base-rgb: var(--ion-color-greenish-rgb);
+    --ion-color-contrast: var(--ion-color-greenish-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-greenish-contrast-rgb);
+    --ion-color-shade: var(--ion-color-greenish-shade);
+    --ion-color-tint: var(--ion-color-greenish-tint);
+  }
+
+  .ion-color-whitish {
+    --ion-color-base: var(--ion-color-whitish);
+    --ion-color-base-rgb: var(--ion-color-whitish-rgb);
+    --ion-color-contrast: var(--ion-color-whitish-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-whitish-contrast-rgb);
+    --ion-color-shade: var(--ion-color-whitish-shade);
+    --ion-color-tint: var(--ion-color-whitish-tint);
+  }
+
+  .ion-color-yellowish {
+    --ion-color-base: var(--ion-color-yellowish);
+    --ion-color-base-rgb: var(--ion-color-yellowish-rgb);
+    --ion-color-contrast: var(--ion-color-yellowish-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-yellowish-contrast-rgb);
+    --ion-color-shade: var(--ion-color-yellowish-shade);
+    --ion-color-tint: var(--ion-color-yellowish-tint);
+  }
+
+/*
+ * Dark Colors
+ * ------------------
+ */
+
+.dark {
+  --ion-background-color: #121212;
+  --ion-background-color-rgb: 18, 18, 18;
+  --ion-text-color-rgb: 255, 255, 255;
+
+  --ion-color-step-50: #1e1e1e;
+  --ion-color-step-100: #2a2a2a;
+  --ion-color-step-150: #363636;
+  --ion-color-step-200: #414141;
+  --ion-color-step-250: #4d4d4d;
+  --ion-color-step-300: #595959;
+  --ion-color-step-350: #656565;
+  --ion-color-step-400: #717171;
+  --ion-color-step-450: #7d7d7d;
+  --ion-color-step-500: #898989;
+  --ion-color-step-550: #949494;
+  --ion-color-step-600: #a0a0a0;
+  --ion-color-step-650: #acacac;
+  --ion-color-step-700: #b8b8b8;
+  --ion-color-step-750: #c4c4c4;
+  --ion-color-step-800: #d0d0d0;
+  --ion-color-step-850: #dbdbdb;
+  --ion-color-step-900: #e7e7e7;
+  --ion-color-step-950: #f3f3f3;
+
+  
+
+}
+
+  a {
+    color: #10FDB9;
+    text-decoration: none;
+  }
+
+  
+
+  
+  ion-list {
+    background: #121212 !important;
+  }
+  
+  ion-card {
+    border: 3px solid #1b1b1b;
+    --background: #121212 !important;
+  }
+  
+  ion-item {
+    --background: #121212 !important;
+  }
+
+  .toast-message {
+    text-align: center !important;
+    --background: var(--ion-color-redish);
+    
+  }
+  
+  .heart {
+    color: #f53b57;
+  }
+
+  
+  

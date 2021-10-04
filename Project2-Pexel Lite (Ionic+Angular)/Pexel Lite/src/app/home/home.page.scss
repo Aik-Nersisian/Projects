@@ -1,0 +1,18 @@
+.card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-title {
+  padding-left: 10%;
+  text-align: center;
+  flex: 90%;
+}
+.heart {
+  flex: 10%;
+  justify-self: end;
+}
+// .description {
+//   flex: 90%;
+// }

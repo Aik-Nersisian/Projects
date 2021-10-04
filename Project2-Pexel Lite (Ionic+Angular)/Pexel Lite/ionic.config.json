@@ -1,0 +1,8 @@
+{
+  "name": "myAppAssign4",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

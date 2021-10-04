@@ -1,0 +1,63 @@
+<body class="dark">
+
+
+  <ion-header class="tab-header" [translucent]="true">
+    <ion-toolbar>
+
+      <ion-button class="modalDismiss" size="large" color="greenish" slot="end" (click)="close()" expand="block"
+        fill="clear" shape="round">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+
+    <ion-card #list>
+      <!-- <ion-item-sliding #item> -->
+
+
+
+
+
+
+      <img src="{{src}}" alt="" />
+
+
+
+
+      <ion-card-header class="ion-text-center">
+        <ion-card-subtitle color="whitish"> "{{name}}"
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+
+
+          <ion-label class="title">Photographer
+          </ion-label>
+
+
+          <div id="photographer" class="cont">
+            <label class="avatar-label" (click)=" openPhotographerPage(photographer_url)">
+              {{photographer}} </label>
+            <img (click)="openPhotographerPage(photographer_url)" class="avatar" [src]=svg />
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-label class="title">Average Color</ion-label>
+          <ion-label id="avg_color" class="cont ion-text-center whitish" [ngStyle]="{'background-color': avg_color}">
+            {{avg_color}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="title">Size</ion-label>
+          <ion-label class="cont ion-text-center">{{height}} x {{width}}</ion-label>
+        </ion-item>
+
+
+
+      </ion-card-content>
+    </ion-card>
+
+  </ion-content>
+</body>

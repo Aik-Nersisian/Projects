@@ -1,0 +1,58 @@
+.modalDismiss {
+  padding: 0;
+  margin: 0;
+}
+
+ion-card {
+  height: 90%;
+}
+
+ion-card-header {
+  padding-bottom: 0px;
+}
+
+ion-card-subtitle {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ion-color-whitish);
+}
+
+ion-label {
+  font-weight: 300;
+  color: #949494 !important;
+}
+
+#avg_color {
+  color: var(--ion-color-whitish) !important;
+}
+
+#photographer {
+  display: flex;
+
+  align-items: center;
+  margin: 0px;
+  color: var(--ion-color-greenish) !important;
+}
+
+#photographer .avatar-label {
+  flex: 1;
+  justify-self: flex-start;
+}
+
+#photographer .avatar {
+  height: 40px;
+  width: 40px;
+
+  justify-self: flex-end;
+}
+
+ion-item {
+  display: flex;
+}
+
+.title {
+  flex: 40%;
+}
+
+.cont {
+  flex: 60%;
+}

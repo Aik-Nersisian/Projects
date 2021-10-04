@@ -1,0 +1,37 @@
+<body class="dark">
+  <ion-content [scrollEvents]="true" (ionScroll)="scroll($event)">
+
+    <ion-list class="ion-text-center " *ngFor="let image of row_data">
+
+      <ion-card>
+        <ion-item-sliding class="ion-no-padding">
+          <ion-item class="ion-no-padding" #item>
+
+
+            <img (click)="showDetails(image)" src="{{image.src}}" alt="">
+
+          </ion-item>
+
+
+          <ion-item-options side="end">
+            <ion-item-option (click)="deleteRow(image)" color="danger" expandable>
+              <ion-icon slot="start" name="trash"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+        <ion-card-subtitle class="card-header">
+          <ion-label class="card-title"> By <a [href]="image.photographer_url">{{image.photographer}}</a>
+          </ion-label>
+        </ion-card-subtitle>
+      </ion-card>
+
+    </ion-list>
+
+  </ion-content>
+</body>
+
+<ion-fab *ngIf="scrolled" vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button class="fab-button" color="darkish" (click)="scrollToTop()">
+    <ion-icon class="fab-icon" color="greenish" name="arrow-up"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

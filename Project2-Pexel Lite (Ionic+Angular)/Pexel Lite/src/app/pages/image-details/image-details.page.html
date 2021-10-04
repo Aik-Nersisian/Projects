@@ -1,0 +1,26 @@
+<body class="dark">
+
+
+  <ion-content>
+    <ion-card #list>
+      <!-- <ion-item-sliding #item> -->
+      <ion-item>
+        <img src="{{src}}" alt="">
+      </ion-item>
+      <ion-card-header class="ion-text-center">
+        <ion-card-subtitle> "{{imageName}}" By <a [href]="photographer_url">{{photographer}}</a>
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-icon size="large" class="heart" (click)="test(imageId)" name="heart" *ngIf="liked"></ion-icon>
+        <ion-icon size="large" class="heart-outline heart" (click)="test(imageId)" name="heart-outline" *ngIf="!iked">
+        </ion-icon>
+      </ion-card-content>
+    </ion-card>
+
+
+
+  </ion-content>
+
+
+</body>

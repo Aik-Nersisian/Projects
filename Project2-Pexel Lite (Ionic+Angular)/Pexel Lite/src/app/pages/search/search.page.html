@@ -1,0 +1,61 @@
+<body class="dark">
+  <ion-content [scrollEvents]="true" (ionScroll)="scroll($event)" [fullscreen]="true" #pageTop>
+    <ion-item id="search" #search>
+      <ion-icon slot="start" name="search"></ion-icon>
+      <ion-input id="searchInput" [(ngModel)]="searchName" (keyup.enter)="searchPhotos()" placeholder="Search..">
+
+      </ion-input>
+    </ion-item>
+
+    <div *ngIf="dataTest">
+
+
+      <!-- <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Blank</ion-title>
+      </ion-toolbar>
+    </ion-header> -->
+      <ion-list class="ion-text-center" *ngFor="let image of images">
+        <ion-card #list>
+          <!-- <ion-item-sliding #item> -->
+
+          <img (click)="showDetails(image)" src="{{image.src}}" alt="">
+
+          <ion-card-header>
+            <ion-card-subtitle class="card-header">
+              <ion-label class="card-title"> By <a [href]="image.photographer_url">{{image.photographer}}</a>
+              </ion-label>
+              <ion-icon size="large" class="heart" (click)="test(image)" name="heart" *ngIf="image.liked"></ion-icon>
+              <ion-icon size="large" class="heart-outline heart" (click)="test(image)" name="heart-outline"
+                *ngIf="!image.liked">
+              </ion-icon>
+            </ion-card-subtitle>
+          </ion-card-header>
+
+        </ion-card>
+      </ion-list>
+
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+
+
+
+
+
+    </div>
+
+
+    <ion-fab *ngIf="scrolled" vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button class="fab-button" color="darkish" (click)="scrollToTop()">
+        <ion-icon class="fab-icon" color="greenish" name="arrow-up"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+
+    <div *ngIf="!dataTest">
+      <app-skeleton></app-skeleton>
+    </div>
+  </ion-content>
+</body>
