@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Assignment2.NewDeckNamePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <NavigationPage.TitleView>
+
+        <Label
+            Margin="0,0,75,0"
+            FontAttributes="Bold"
+            FontSize="24"
+            HorizontalTextAlignment="Center"
+            Text="Deck Name"
+            TextColor="#fcd144"
+            VerticalTextAlignment="Center" />
+
+
+    </NavigationPage.TitleView>
+
+    <Grid>
+        <Image Aspect="Fill" Source="https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/bg_filter_tabletmobile-f66d0c6366cb3334fc5246473ab8119d0475da02aca45b6883dafd23def2ee874f4cdf148590e2eff13104847e3b7b7e0d3eb105157b952977f96fc1d8dd3ab5.jpg" />
+        <StackLayout>
+
+            <Entry
+                x:Name="deckName"
+                Margin="0,0,0,100"
+                ClearButtonVisibility="WhileEditing"
+                Completed="NameEnteredCompleted"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                MaxLength="17"
+                Placeholder="New Deck Name"
+                TextChanged="deckName_TextChanged"
+                TextColor="#fcd144"
+                VerticalOptions="CenterAndExpand"
+                WidthRequest="200" />
+            <StackLayout
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                VerticalOptions="End">
+                <Button
+                    x:Name="createDeckButton"
+                    Margin="5,0,8,10"
+                    BackgroundColor="#C3B189"
+                    BorderColor="#F5EF9D"
+                    BorderWidth="2"
+                    Clicked="CreateDeckButtonClicked"
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    IsVisible="False"
+                    Text="Create Deck"
+                    TextColor="#614326" />
+            </StackLayout>
+
+        </StackLayout>
+
+    </Grid>
+</ContentPage>

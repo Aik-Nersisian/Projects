@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Assignment2.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!--  NavBar  -->
+
+    <NavigationPage.TitleView>
+
+        <Label
+            FontSize="24"
+            HorizontalTextAlignment="Center"
+            Text="Hearthstone deck builder"
+            TextColor="#fcd144"
+            VerticalTextAlignment="Center" />
+    </NavigationPage.TitleView>
+
+    <!--  Main Grid  -->
+
+    <Grid BackgroundColor="#32271E">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" />
+        </Grid.ColumnDefinitions>
+
+        <Image
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            Aspect="AspectFill"
+            Source="https://d2vkoy1na2a6o6.cloudfront.net/_next/static/media/wood_middle_repeat.b4458ce9f1d0c41bb51b9b8385c0943f.png" />
+
+
+        <Label
+            x:Name="deckFramee"
+            Grid.Row="0"
+            Grid.Column="0"
+            FontSize="Small"
+            HorizontalOptions="Center"
+            Text="Your Decks"
+            TextColor="#fcd144"
+            VerticalOptions="Center" />
+
+
+        <Image
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="0"
+            Aspect="Fill"
+            Source="https://d2vkoy1na2a6o6.cloudfront.net/_next/static/media/sidebar_bg.c9363b32d270de2944fd498260f42009.png" />
+
+        <!--  Left Side Title Image and Text  -->
+        <StackLayout
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="0">
+
+            <!--  Left Side Background Image  -->
+
+
+            <CollectionView
+                x:Name="Deckss"
+                Margin="7,0,7,0"
+                SelectionChanged="OnCollectionViewSelectionChanged"
+                SelectionMode="Single"
+                VerticalScrollBarVisibility="Always">
+                <CollectionView.ItemTemplate>
+
+                    <DataTemplate>
+                        <Grid>
+                            <StackLayout>
+                                <Frame
+                                    x:Name="deckFrame"
+                                    Margin="4"
+                                    Padding="0"
+                                    BackgroundColor="Transparent"
+                                    BorderColor="#CC3C2F">
+
+                                    <Label
+                                        x:Name="deckLabel"
+                                        BackgroundColor="#B13D0D0D"
+                                        HeightRequest="40"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding Deckname}"
+                                        TextColor="#ffff"
+                                        VerticalTextAlignment="Center" />
+                                </Frame>
+                            </StackLayout>
+
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">
+                                    <VisualState Name="Normal" />
+                                    <VisualState Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="#F5EF9D" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Grid>
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!--  Add Deck Button  -->
+            <Button
+                Margin="5,0,8,10"
+                BackgroundColor="#C3B189"
+                BorderColor="#F5EF9D"
+                BorderWidth="2"
+                Clicked="AddNewDeck"
+                FontAttributes="Bold"
+                FontSize="12"
+                Text="Add a deck"
+                TextColor="#614326" />
+
+        </StackLayout>
+
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="1"
+            FontSize="Small"
+            HorizontalOptions="Center"
+            Text="Deck Name"
+            TextColor="#fcd144"
+            VerticalOptions="Center" />
+
+        <Image
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="1"
+            Aspect="Fill"
+            Source="https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/bg_filter_tabletmobile-f66d0c6366cb3334fc5246473ab8119d0475da02aca45b6883dafd23def2ee874f4cdf148590e2eff13104847e3b7b7e0d3eb105157b952977f96fc1d8dd3ab5.jpg" />
+
+        <!--  Right Side Background Image  -->
+        <StackLayout
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="1"
+            x:Name="refreshView">
+
+            <RefreshView IsRefreshing="{Binding IsRefreshing}"
+             Command="{Binding RefreshCommand}">
+            <CollectionView
+                x:Name="cardsList"
+                Margin="10,0,0,0"
+                SelectionChanged="OnFavCollectionSelectionChanged"
+                SelectionMode="Single"
+                VerticalScrollBarVisibility="Always">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+
+                            <StackLayout
+                                Margin="3,3,3,3"
+                                BackgroundColor="#5A000000"
+                                Orientation="Vertical">
+
+                                <Image
+                                    Aspect="AspectFill"
+                                    HeightRequest="175"
+                                    Source="{Binding Image}" />
+                                <Label
+                                    Margin="0,0,0,10"
+                                    HorizontalOptions="Center"
+                                    Text="{Binding NumberInTheDeck, StringFormat='Copies: {0}'}"
+                                    TextColor="#fcd144"
+                                    VerticalOptions="Center" />
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            </RefreshView>
+
+            <Grid Margin="5,0,8,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="48" />
+                </Grid.RowDefinitions>
+                <Button
+                    x:Name="updateButton"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    BackgroundColor="#C3B189"
+                    BorderColor="#F5EF9D"
+                    BorderWidth="2"
+                    Clicked="Update_Clicked"
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    IsVisible="{Binding UpdateDeckButton}"
+                    Text="Update The Deck"
+                    TextColor="#614326" />
+                <Button
+                    x:Name="removeButton"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    BackgroundColor="#3AC3B189"
+                    BorderColor="#F5EF9D"
+                    BorderWidth="2"
+                    Clicked="Remove_Clicked"
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    IsVisible="{Binding RemoveDeckButton}"
+                    Text="Remove The Deck"
+                    TextColor="#F5EF9D" />
+            </Grid>
+
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
