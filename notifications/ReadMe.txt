@@ -1,6 +1,6 @@
 Hello!
 
-Please close/download the repo in order to test the "notifications" project.
+Please clone/download the repo in order to test the "notifications" project.
 
 1: After using the Download as Zip method, extract only the 'notifications' folder and place it on your computer.
 2: Access the folder with Visual Studio (any supported IDE).
