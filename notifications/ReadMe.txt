@@ -8,7 +8,9 @@ Please clone/download the repo in order to test the "notifications" project.
 4. In the second terminal run `npm run dev`. This will run the Express Server.
 5. In the first terminal run `npm run serve`. This will run the front-end.
 
-Inspect the network fetches. You will see that I receive a few identical notifications from different organizations, which will be combined into one.
+Open the localhost, and click the notifications icon on the top right to open the notifications widget.
+
+Inspect the network fetches. You will see that I receive a few identical notifications from different organizations in the 'newNotifications' response. The duplicates  will be combined into one.
 In the notifications widget, you will see only 1 notification, with an array of organizations it came from.
 
 
