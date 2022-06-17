@@ -4,7 +4,7 @@ Please clone/download the repo in order to test the "notifications" project.
 
 1: After using the Download as Zip method, extract only the 'notifications' folder and place it on your computer.
 2: Access the folder with Visual Studio (any supported IDE).
-3: Open two terminals. In first access the 'job' folder. In second access 'server' folder. In both terminals tun `npm install`.
+3: Open two terminals. In first access the 'job' folder. In second access 'server' folder. In both terminals run `npm install`.
 4. In the second terminal run `npm run dev`. This will run the Express Server.
 5. In the first terminal run `npm run serve`. This will run the front-end.
 
