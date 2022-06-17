@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "lodash": "^4.17.21",
-    "lodash.merge": "^4.6.2",
-    "lodash.mergewith": "^4.6.2",
-    "vue-js-modal": "^2.0.1"
-  }
-}
