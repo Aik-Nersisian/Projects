@@ -2,7 +2,7 @@
 <!-- When the notifications widget is open, Navbar will emit an event to App, and an overlay will be applied to the application   -->
 
 <template>
-  <div id="app">
+  <div id="main-app">
     <div v-if="overlay" class="overlay"></div>
     <NavBarComponent @overlay="overlayShow" />
     <router-view />
@@ -31,12 +31,7 @@ export default {
 
 <style lang="scss">
 @import "@/assets/scss/main.scss";
-#app {
-  font-family: gilroy, -apple-system, BlinkMacSystemFont, segoe ui, Roboto,
-    helvetica neue, Arial, noto sans, sans-serif, apple color emoji,
-    segoe ui emoji, segoe ui symbol, noto color emoji;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#main-app {
   text-align: center;
   color: #2c3e50;
 
